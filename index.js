@@ -16,7 +16,7 @@ const fs = require("fs").promises;
 const path = require("path");
 app.use(
   cors({
-    origin: ["http://localhost:3000","https://e8f6c409.hr-5cy.pages.dev"],
+    origin: ["*"],
     credentials: true,
     methods: ["GET", "POST", "PUT","PATCH", "DELETE", "OPTIONS"], // Allowed HTTP methods
     allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
