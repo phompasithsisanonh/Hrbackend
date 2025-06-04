@@ -16,7 +16,7 @@ const fs = require("fs").promises;
 const path = require("path");
 app.use(
   cors({
-    origin: ["*"],
+    origin: "https://hrresource.netlify.app",
     credentials: true,
     methods: ["GET", "POST", "PUT","PATCH", "DELETE", "OPTIONS"], // Allowed HTTP methods
     allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
