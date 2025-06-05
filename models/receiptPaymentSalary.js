@@ -57,6 +57,18 @@ const receiptPaymentSalarySchema = new Schema(
       type: Number,
       required: true,
     },
+    NetBennifits: {
+      type: Number,
+      required: true,
+    },
+    totalTimeOt: {
+      type: Number,
+      required: true,
+    },
+    totalTimeLate: {
+      type: Number,
+      required: true,
+    },
     incomeItems: [
       {
         itemName: String,

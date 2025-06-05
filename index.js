@@ -14,6 +14,7 @@ const hrrouter = require("./routers/hRrouter");
 const PORT = process.env.PORT || 8080;
 const fs = require("fs").promises;
 const path = require("path");
+// "https://hrresource.netlify.app"
 app.use(
   cors({
     origin: "https://hrresource.netlify.app",

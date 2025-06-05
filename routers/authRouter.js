@@ -7,6 +7,7 @@ const {
   getPost,
   editPost,
   deletePost,
+  logout,
 } = require("../controllers/auth");
 const { authMiddlewares } = require("../middleware/authmiddleware");
 const authrouter = express.Router();
@@ -139,4 +140,5 @@ authrouter.get("/auth/check", (req, res) => {
     res.status(200).json({ message: "Authorized", user: decoded });
   });
 });
+authrouter.post('/logout',logout)
 module.exports = authrouter;

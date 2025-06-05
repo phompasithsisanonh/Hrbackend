@@ -446,6 +446,26 @@ const deletePost = async (req, res) => {
     res.status(500).json({ success: false, message: "Server error" });
   }
 };
+
+const logout = async (req, res) => {
+  try {
+    // Clear the authToken cookie by setting maxAge to 0
+    res.clearCookie("authToken", {
+      httpOnly: true, // Prevents client-side JavaScript access
+      secure: true, // Use secure cookies in production
+      sameSite: "strict", // Helps prevent CSRF attacks
+      maxAge: 0, // Expire immediately
+    });
+
+    res.status(200).json({
+      success: true,
+      message: "Logout successful",
+    });
+  } catch (error) {
+    console.error("Error in seller_logout:", error);
+    res.status(500).json({ success: false, message: "Server error" });
+  }
+};
 module.exports.authRegister = authRegister;
 module.exports.login = login;
 module.exports.getAuth = getAuth;
@@ -454,3 +474,4 @@ module.exports.postNotice = postNotice;
 module.exports.getPost = getPost;
 module.exports.editPost = editPost;
 module.exports.deletePost = deletePost;
+module.exports.logout =logout ;

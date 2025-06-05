@@ -21,7 +21,7 @@ const addDataSalary = async (req, res) => {
       month,
       year,
       otId,
-      bennifits
+      bennifits,
     } = req.body;
     const newSalary = new dataAlreadySalaryTranform({
       HrAdminId: id,
@@ -39,7 +39,7 @@ const addDataSalary = async (req, res) => {
       month,
       year,
       otId,
-      bennifits
+      bennifits,
     });
     await newSalary.save();
     res.status(201).json({
@@ -266,8 +266,10 @@ const postsavepaySalary = async (req, res) => {
       taxBracket,
       year,
       month,
+      NetBennifits,
+      totalTimeLate,
+      totalTimeOt,
     } = req.body;
-    console.log(bennifits)
     // สร้างเอกสารใหม่
     const newSalaryReceipt = new receiptPaymentSalary({
       HrAdminId: id,
@@ -281,7 +283,10 @@ const postsavepaySalary = async (req, res) => {
       tax,
       netExpense,
       netIncome,
+      NetBennifits,
       netSalary,
+      totalTimeLate,
+      totalTimeOt,
       incomeItems,
       expenseItems,
       taxBracket,
